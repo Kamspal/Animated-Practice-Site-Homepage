@@ -105,13 +105,13 @@
                     </span>
                 <pre class="hidden">
                     <code class="composition-static-html">
-                        &lt;h1 class="ml1"&gt;
-                            &lt;span class="text-wrapper"&gt;
-                                &lt;span class="line line1"&gt;&lt;/span&gt;
-                                &lt;span class="letters"&gt;THURSDAY&lt;/span&gt;
-                                &lt;span class="line line2"&gt;&lt;/span&gt;
-                            &lt;/span&gt;
-                        &lt;/h1&gt;
+                    &lt;h1 class="ml1"&gt;
+                    &lt;span class="text-wrapper"&gt;
+                        &lt;span class="line line1"&gt;&lt;/span&gt;
+                        &lt;span class="letters"&gt;THURSDAY&lt;/span&gt;
+                        &lt;span class="line line2"&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;/h1&gt;
                     </code>
                 </pre>
                 <div class="composition-wrapper" data-color="9ba5b5">

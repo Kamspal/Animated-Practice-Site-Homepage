@@ -29,19 +29,19 @@
                         <span class="hero-name-inner">Bjerrome</span>
                     </span>
                 </h1>
-                    <div class="tab-container">
-                        <svg  class="tab"  width="1022" height="482" viewBox="0 0 1022 482" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M634.184 481.999L567.587 379.929L500.99 481.999H247.355L573.255 0L886.402 481.999H634.184ZM198.374 198.47H0V0H518.605L198.374 472.076V198.47Z" />
-                                <path d="M626.67 0C626.67 0 848.8 0 962.621 0C978.369 0 993.472 6.26031 1004.61 17.3996C1015.74 28.5423 1022 43.6521 1022 59.4083C1022 152.061 1022 329.939 1022 422.592C1022 438.348 1015.74 453.458 1004.61 464.6C993.472 475.74 978.369 482 962.621 482H939.816L626.67 0Z" />
-                        </svg>
-                    </div>
+                <div class="tab-container" style="opacity: 1;">
+                    <svg class="tab" width="1022" height="482" viewBox="0 0 1022 482" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 1; transform: translateY(0px) scaleY(1);">
+                        <path d="M634.184 481.999L567.587 379.929L500.99 481.999H247.355L573.255 0L886.402 481.999H634.184ZM198.374 198.47H0V0H518.605L198.374 472.076V198.47Z"></path>
+                        <path d="M626.67 0C626.67 0 848.8 0 962.621 0C978.369 0 993.472 6.26031 1004.61 17.3996C1015.74 28.5423 1022 43.6521 1022 59.4083C1022 152.061 1022 329.939 1022 422.592C1022 438.348 1015.74 453.458 1004.61 464.6C993.472 475.74 978.369 482 962.621 482H939.816L626.67 0Z"></path>
+                    </svg>
+			    </div>
             </div>
                 <h2 class="portfolio-intro-header">I design, tinker, & teach.</h2>
         </div>
 
         <div class="section grid-items grid-items-feature-first grid-items-peak">
                 <h2 class="section-header">Blog.</h2>
-                    <a class="grid-item post-preview" style="background-color: #3bab87" href="">
+                    <a class="grid-item post-preview" style="background-color: #3bab87" href="/blog/ab-testing">
                         <h1 class="grid-item-header" style="color: rgba(255,255,255,1)">A brief introduction to A/B-testing</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>
@@ -58,7 +58,7 @@
                                 </p>
                     </a>
 
-                    <a class="grid-item post-preview" style="background-color: #FDF0EC" href="">
+                    <a class="grid-item post-preview" style="background-color: #FDF0EC" href="/blog/chaining-styles">
                         <h1 class="grid-item-header" style="color: rgba(0,0,0,1)">Chaining styles with a JavaScript Proxy</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>
@@ -79,7 +79,7 @@
                                 </p>
                     </a>
 
-                    <a class="grid-item post-preview" style="background-color: #98bec8" href="">
+                    <a class="grid-item post-preview" style="background-color: #98bec8" href="/blog/smoother-&-sharp">
                         <h1 class="grid-item-header">Smoother & sharper shadows with layered box-shadows</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>
@@ -97,7 +97,7 @@
                                 </p>
                     </a>
 
-                    <a class="grid-item grid-item-wide case-item-blog" href="">
+                    <a class="grid-item grid-item-wide case-item-blog" href="/blog">
                         <div class="grid-item-bg"></div>
                             <h3 class="grid-item-header grid-item-header-blog">Read all posts</h3>
                                 <div class="grid-item-divider"></div>
@@ -109,7 +109,7 @@
 
         <div class="section grid-items grid-items-feature-first">
             <h2 class="section-header">Projects.</h2>
-                <a class="grid-item grid-item-dark-text grid-item-tall case-item-spinkit" href="">
+                <a class="grid-item grid-item-dark-text grid-item-tall case-item-spinkit" href="/spinkit">
                     <h3 class="grid-item-header">SpinKit</h3>
                         <span class="grid-item-button">
                             <span class="grid-item-button-label">View project</span>
@@ -124,7 +124,7 @@
                         </p>
                 </a>
 
-                <a class="grid-item grid-item-tall case-item-moving-letters" href="">
+                <a class="grid-item grid-item-tall case-item-moving-letters" href="/moving-letters">
                     <span class="grid-item-button">
                         <span class="grid-item-button-label">View project</span>
                     </span>
@@ -139,7 +139,7 @@
                         </p>
                 </a>
 
-                <a class="grid-item grid-item-tall" style="background-color: #1a1a1a" href="">
+                <a class="grid-item grid-item-tall" style="background-color: #1a1a1a" href="/typesource">
                     <span class="grid-item-button">
                         <span class="grid-item-button-label">View project</span>
                     </span>
@@ -155,7 +155,7 @@
 
         <div class="section grid-items">
             <h2 class="section-header">Work.</h2>
-                <a class="grid-item grid-item-wide grid-item-minecraft" href="">
+                <a class="grid-item grid-item-wide grid-item-minecraft" href="https:www.minecraft.net/en-us">
                     <span class="grid-item-button">
                         <span class="grid-item-button-label">View project</span>
                     </span>
@@ -178,7 +178,7 @@
                                 <br>
                                     <div class="grid-item-minecraft-block" data-frames="21" style="background-position: -2500px 112px"></div>
                 </a>
-                <a class="grid-item case-item-spotify" href="">
+                <a class="grid-item case-item-spotify" href="https:www.spotify.com/int/why-not-available">
                     <div class="grid-item-bg" style="background-image: url(/img/spotify.jpg)"></div>
                         <span class="grid-item-button">
                             <span class="grid-item-button-label">View project</span>
@@ -193,7 +193,7 @@
                                     Early on at Spotify I lead the UI design for all products and worked with building the design team.
                                 </p>
                 </a>
-                <a class="grid-item case-item-speaking" href="">
+                <a class="grid-item case-item-speaking" href="/speaking">
                     <div class="grid-item-bg" style="background-image: url(/img/speaking.jpg)"></div>
                         <span class="grid-item-button">
                             <span class="grid-item-button-label">Read more</span>
@@ -209,7 +209,7 @@
                                         I speak at events and facilitate workshops within design, digitalization, and innovation.
                                     </p>
                 </a>
-                <a class="grid-item grid-item-wide case-item-hi" href="">
+                <a class="grid-item grid-item-wide case-item-hi" href="https:www.hyperisland.com">
                     <div class="grid-item-bg" style="background-image: url(/img/curriculum.jpg)"></div>
                         <span class="grid-item-button">
                             <span class="grid-item-button-label">View program</span>
@@ -222,7 +222,7 @@
                                         for several years. I've written curriculums, managed courses, and taught programming, design, statistics, data strategy, and rhetorics.
                                     </p>
                 </a>
-                <a class="grid-item case-item-lookback" href="">
+                <a class="grid-item case-item-lookback" href="https:lookback.io">
                     <div class="grid-item-bg" style="background-image: url(/img/lookback.jpg)"></div>
                         <span class="grid-item-button">
                             <span class="grid-item-button-label">View project</span>
@@ -237,7 +237,7 @@
                                         At Lookback I made it easier to conduct user research for digital products.
                                     </p>
                 </a>
-                <a class="grid-item case-item-designpriset" href="">
+                <a class="grid-item case-item-designpriset" href="https:www.designpriset.se">
                     <div class="grid-item-bg" style="background-image: url(/img/designpriset.jpg)"></div>
                         <span class="grid-item-button">
                             <span class="grid-item-button-label">View project</span>
@@ -246,7 +246,7 @@
                                 <div class="grid-item-divider"></div>
                                     <p class="grid-item-text">I'm a jury member for the Swedish Design Awards (Svenska designpriset), working with all digital categories.</p>
                 </a>
-                <a class="grid-item grid-item-wide case-item-gh" href="">
+                <a class="grid-item grid-item-wide case-item-gh" href="https:github.com">
                     <div class="grid-item-bg" style="background-image: url(/img/github.png)"></div>
                         <span class="grid-item-button">
                             <span class="grid-item-button-label">View project</span>

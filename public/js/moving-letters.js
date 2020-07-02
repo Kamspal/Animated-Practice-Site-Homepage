@@ -9,7 +9,6 @@ app.ready(() => {
   });
 
   listen(".composition-back-button", "click", e => {
-    e.preventDefault();
     ml.hideSource();
   });
 
@@ -179,9 +178,9 @@ ml.hideSource = function() {
   ml.isShowingSource = false;
   ml.resetHash();
 
-  // select("html").classList.remove("is-showing-source");
-  // ml.onlyPlayVisible();
-  // select(".composition-active").classList.remove("composition-active");
+  select("html").classList.remove("is-showing-source");
+  ml.onlyPlayVisible();
+  select(".composition-active").classList.remove("composition-active");
   
   app.overlay.hide({
     position: app.overlay.lastStartingPoint,
@@ -270,3 +269,4 @@ ml.verticalCenterForElement = function(element) {
 
   return rect.top + rect.height / 2 + 50;
 }
+

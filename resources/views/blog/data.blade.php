@@ -25,7 +25,7 @@
 
         <div class="section grid-items grid-items-feature-first">
                 
-                    <a class="grid-item post-preview" style="background-color: #3bab87" href="">
+                    <a href="/blog/ab-testing" class="grid-item post-preview" style="background-color: #3bab87">
                         <h1 class="grid-item-header" style="color: rgba(255,255,255,1)">A brief introduction to A/B-testing</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>
@@ -42,7 +42,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color:#98bec8">
+                    <a href="/blog/introduction-to-chartjs" class="grid-item post-preview" style="background-color:#98bec8">
                         <h1 class="grid-item-header">Data visualization with Chart.js: An introduction</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -59,7 +59,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #e8c3b9">
+                    <a href="/blog/chartjs-charts-to-get-you-started" class="grid-item post-preview" style="background-color: #e8c3b9">
                         <h1 class="grid-item-header">10 Chart.js example charts to get you started</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   

@@ -24,7 +24,7 @@
         </div>
 
         <div class="section grid-items grid-items-feature-first">
-                    <a class="grid-item post-preview" style="background-color: #FDF0EC" href="">
+                    <a href="/blog/chaining-styles" class="grid-item post-preview" style="background-color: #FDF0EC">
                         <h1 class="grid-item-header" style="color: rgba(0,0,0,1)">Chaining styles with a JavaScript Proxy</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>
@@ -45,7 +45,7 @@
                                 </p>
                     </a>
 
-                    <a class="grid-item post-preview" style="background-color: #98bec8" href="">
+                    <a href="/blog/smoother-&-sharp" class="grid-item post-preview" style="background-color: #98bec8">
                         <h1 class="grid-item-header">Smoother & sharper shadows with layered box-shadows</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>
@@ -63,7 +63,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #7290a4">
+                    <a href="/blog/flexbox-break-to-new-row" class="grid-item post-preview" style="background-color: #7290a4">
                         <h1 class="grid-item-header">Breaking to a new row with flexbox</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -88,7 +88,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #2b2f3c">
+                    <a href="/blog/masonry-with-css" class="grid-item post-preview" style="background-color: #2b2f3c">
                         <h1 class="grid-item-header">CSS masonry with flexbox, :nth-child(), and order</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -115,7 +115,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #314964">
+                    <a href="/blog/common-flexbox-patterns" class="grid-item post-preview" style="background-color: #314964">
                         <h1 class="grid-item-header">Common CSS Flexbox Layout Patterns with Example Code</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -136,7 +136,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #45383c">
+                    <a href="/blog/curved-path-animations-in-css" class="grid-item post-preview" style="background-color: #45383c">
                         <h1 class="grid-item-header">Moving along a curved path in CSS with layered animation</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -165,7 +165,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #8e5ea2">
+                    <a href="/blog/how-to-animate-box-shadow" class="grid-item post-preview" style="background-color: #8e5ea2">
                         <h1 class="grid-item-header">How to animate box-shadow with silky smooth performance</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -182,7 +182,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #9ba5b5">
+                    <a href="/blog/google-web-font-inspiration" class="grid-item post-preview" style="background-color: #9ba5b5">
                         <h1 class="grid-item-header">Google Web Font Inspiration with TypeSource</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -199,7 +199,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #2b2f3c">
+                    <a href="/blog/css-trick-animating-link-underlines" class="grid-item post-preview" style="background-color: #2b2f3c">
                         <h1 class="grid-item-header">Animating Link Underlines</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -218,7 +218,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #c45850">
+                    <a href="/spinkit" class="grid-item post-preview" style="background-color: #c45850">
                         <h1 class="grid-item-header">Introducing SpinKit</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -236,230 +236,491 @@
                     </a>
         </div>
 
-<!-- Flexbox animation -->
+<!-- New row flexbox -->
+<style>
+  .flexbox-break-banner-logo {
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .flexbox-break-box {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 50% 0;
+  }
+</style>
 <script>
-    var postMasonryBoxTimeline = anime.timeline({ loop: true });
-    postMasonryBoxTimeline
-  .add({ /* just one line */ 
-    targets: '.flexbox-break-box',
-    translateX: function(el, i) { return -60+i*20 },
-    scaleY: 0.36,
-    scaleX: 0.12,
-    delay: function(el, i) { return i*70 },
-    easing: "easeOutExpo",
-    duration: 600
-  })
-  .add({
-    targets: '.flexbox-break-box',
-    translateY: function(el, i) { 
-      if (i > 3) return 20;
-      if (i == 3) return 0;
-      return -20;
-    },
-    translateX: function(el, i) {
-      if (i == 0 || i == 4) return -27;
-      if (i == 1 || i == 3 || i == 5) return 0;
-      return 27;
-    },
-    scaleY: 0.36,
-    scaleX: function(el, i) { return i == 3 ? 0.72 : 0.17 },
-    easing: "easeOutExpo",
-    delay: function(el, i) { return 800 + i*20 },
-    duration: 700
-  })
-  .add({
-    targets: '.flexbox-break-box',
-    translateY: 0,
-    translateX: 0,
-    scaleY: 0.36,
-    scaleX: 0.12,
-    easing: "easeInExpo",
-    delay: function(el, i) { return 800 + i*70 },
-    duration: 600
-  })
-  .add({
-    targets: '.flexbox-break-box',
-    translateX: -60,
-    scaleY: 0.36,
-    scaleX: 0.12,
-    duration: 800
-  });
-app.animations.track(postMasonryBoxTimeline, document.querySelector(".flexbox-break-banner-logo"));
+  var postMasonryBoxTimeline = anime.timeline({ loop: true });
+  postMasonryBoxTimeline
+    .add({ /* just one line */ 
+      targets: '.flexbox-break-box',
+      translateX: function(el, i) { return -60+i*20 },
+      scaleY: 0.36,
+      scaleX: 0.12,
+      delay: function(el, i) { return i*70 },
+      easing: "easeOutExpo",
+      duration: 600
+    })
+    .add({
+      targets: '.flexbox-break-box',
+      translateY: function(el, i) { 
+        if (i > 3) return 20;
+        if (i == 3) return 0;
+        return -20;
+      },
+      translateX: function(el, i) {
+        if (i == 0 || i == 4) return -27;
+        if (i == 1 || i == 3 || i == 5) return 0;
+        return 27;
+      },
+      scaleY: 0.36,
+      scaleX: function(el, i) { return i == 3 ? 0.72 : 0.17 },
+      easing: "easeOutExpo",
+      delay: function(el, i) { return 800 + i*20 },
+      duration: 700
+    })
+    .add({
+      targets: '.flexbox-break-box',
+      translateY: 0,
+      translateX: 0,
+      scaleY: 0.36,
+      scaleX: 0.12,
+      easing: "easeInExpo",
+      delay: function(el, i) { return 800 + i*70 },
+      duration: 600
+    })
+    .add({
+      targets: '.flexbox-break-box',
+      translateX: -60,
+      scaleY: 0.36,
+      scaleX: 0.12,
+      duration: 800
+    });
+    app.animations.track(postMasonryBoxTimeline, document.querySelector(".flexbox-break-banner-logo"));
 </script>
 
-<!-- Masonry animation -->
+<!-- Css Masonry -->
+<style>
+  .masonry-banner-logo {
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .masonry-box {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 50% 0;
+  }
+</style>
 <script>
-    var postMasonryBoxTimeline = anime.timeline({ loop: true });
-    postMasonryBoxTimeline
-  .add({ 
-    targets: '.masonry-box',
-    translateX: function(el, i) { 
-      if (i < 3) return "-23px";
-      if (i > 5) return "23px";
-      return 0;
-    },
-    opacity: [0,1],
-    translateY: function(el, i) { 
-      var amount = (i%3)*26;
-      return amount + "px";
-    },
-    scaleY: function(el, i) {
-      if (i == 0) return 0.2;
-      if (i == 1) return 0.1;
-      if (i == 2) return 0.15;
-      if (i == 3) return 0.11;
-      if (i == 4) return 0.19;
-      if (i == 5) return 0.12;
-      if (i == 6) return 0.14;
-      if (i == 7) return 0.1;
-      if (i == 8) return 0.16;
-    },
-    scaleX: [0, 0.15],
-    duration: 600,
-    delay: function(el, i) {
-      return 400 + i*70;
-    },
-    easing: "easeOutExpo"
-  }).add({ 
-    targets: '.masonry-box',
-    translateX: function(el, i) { 
-      if (i < 3) return "-23px";
-      if (i > 5) return "23px";
-      return 0;
-    },
-    translateY: function(el, i) { 
-      if (i == 0) return 0  + "px";
-      if (i == 1) return 24 + "px";
-      if (i == 2) return 38 + "px";
-      if (i == 3) return 0  + "px";
-      if (i == 4) return 15 + "px";
-      if (i == 5) return 38 + "px";
-      if (i == 6) return 0  + "px";
-      if (i == 7) return 18 + "px";
-      if (i == 8) return 32 + "px";
-    },
-    scaleY: function(el, i) {
-      if (i == 0) return 0.2;
-      if (i == 1) return 0.1;
-      if (i == 2) return 0.15;
-      if (i == 3) return 0.11;
-      if (i == 4) return 0.19;
-      if (i == 5) return 0.12;
-      if (i == 6) return 0.14;
-      if (i == 7) return 0.1;
-      if (i == 8) return 0.16;
-    },
-    scaleX: 0.15,
-    duration: 500,
-    delay: 700,
-    easing: "easeOutExpo"
-  }).add({ 
-    targets: '.masonry-box',
-    opacity: 0,
-    translateY: "+=10px",
-    duration: 700,
-    translateX: function(el, i) { 
-      if (i < 3) return "-23px";
-      if (i > 5) return "23px";
-      return 0;
-    },
-    scaleY: function(el, i) {
-      if (i == 0) return 0.2;
-      if (i == 1) return 0.1;
-      if (i == 2) return 0.18;
-      if (i == 3) return 0.11;
-      if (i == 4) return 0.19;
-      if (i == 5) return 0.12;
-      if (i == 6) return 0.14;
-      if (i == 7) return 0.1;
-      if (i == 8) return 0.14;
-    },
-    scaleX: 0.15,
-    delay: function(el, i) { return 1800 + i*40 },
-    easing: "easeInExpo"
-  });
-app.animations.track(postMasonryBoxTimeline, document.querySelector(".masonry-banner-logo"));
+  var postMasonryBoxTimeline = anime.timeline({ loop: true });
+  postMasonryBoxTimeline
+    .add({ 
+      targets: '.masonry-box',
+      translateX: function(el, i) { 
+        if (i < 3) return "-23px";
+        if (i > 5) return "23px";
+        return 0;
+      },
+      opacity: [0,1],
+      translateY: function(el, i) { 
+        var amount = (i%3)*26;
+        return amount + "px";
+      },
+      scaleY: function(el, i) {
+        if (i == 0) return 0.2;
+        if (i == 1) return 0.1;
+        if (i == 2) return 0.15;
+        if (i == 3) return 0.11;
+        if (i == 4) return 0.19;
+        if (i == 5) return 0.12;
+        if (i == 6) return 0.14;
+        if (i == 7) return 0.1;
+        if (i == 8) return 0.16;
+      },
+      scaleX: [0, 0.15],
+      duration: 600,
+      delay: function(el, i) {
+        return 400 + i*70;
+      },
+      easing: "easeOutExpo"
+    }).add({ 
+      targets: '.masonry-box',
+      translateX: function(el, i) { 
+        if (i < 3) return "-23px";
+        if (i > 5) return "23px";
+        return 0;
+      },
+      translateY: function(el, i) { 
+        if (i == 0) return 0  + "px";
+        if (i == 1) return 24 + "px";
+        if (i == 2) return 38 + "px";
+        if (i == 3) return 0  + "px";
+        if (i == 4) return 15 + "px";
+        if (i == 5) return 38 + "px";
+        if (i == 6) return 0  + "px";
+        if (i == 7) return 18 + "px";
+        if (i == 8) return 32 + "px";
+      },
+      scaleY: function(el, i) {
+        if (i == 0) return 0.2;
+        if (i == 1) return 0.1;
+        if (i == 2) return 0.15;
+        if (i == 3) return 0.11;
+        if (i == 4) return 0.19;
+        if (i == 5) return 0.12;
+        if (i == 6) return 0.14;
+        if (i == 7) return 0.1;
+        if (i == 8) return 0.16;
+      },
+      scaleX: 0.15,
+      duration: 500,
+      delay: 700,
+      easing: "easeOutExpo"
+    }).add({ 
+      targets: '.masonry-box',
+      opacity: 0,
+      translateY: "+=10px",
+      duration: 700,
+      translateX: function(el, i) { 
+        if (i < 3) return "-23px";
+        if (i > 5) return "23px";
+        return 0;
+      },
+      scaleY: function(el, i) {
+        if (i == 0) return 0.2;
+        if (i == 1) return 0.1;
+        if (i == 2) return 0.18;
+        if (i == 3) return 0.11;
+        if (i == 4) return 0.19;
+        if (i == 5) return 0.12;
+        if (i == 6) return 0.14;
+        if (i == 7) return 0.1;
+        if (i == 8) return 0.14;
+      },
+      scaleX: 0.15,
+      delay: function(el, i) { return 1800 + i*40 },
+      easing: "easeInExpo"
+    });
+  app.animations.track(postMasonryBoxTimeline, document.querySelector(".masonry-banner-logo"));
 </script>
 
-<!-- Flexbox patterns -->
+<!-- Common CSS flexbox -->
+<style>
+  .flexbox-banner-logo {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .flexbox-box {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
 <script>
-    var postFlexBoxTimeline = anime.timeline({ loop: true });
-    postFlexBoxTimeline
-  .add({ /* hamburger */ 
-    targets: '.flexbox-box',
-    translateY: function(el, i) { return -23+(i*23) },
-    scaleY: 0.15,
-    duration: 500
-  })
-  .add({ /* collapsed hamburger */
-    targets: '.flexbox-box',
-    translateY: 0,
-    scaleY: 0.15,
-    duration: 900,
-    easing: "easeInOutExpo",
-    delay: 800
-  })
-  .add({ /* one vertical line */
-    targets: '.flexbox-box',
-    scaleY: 1,
-    scaleX: 0.15,
-    easing: "easeOutExpo",
-    duration: 400
-  })
-  .add({ /* flipped hamburger */
-    targets: '.flexbox-box',
-    translateX: function(el, i) { return -30+(i*30) },
-    scaleY: 0.9,
-    scaleX: 0.15,
-    easing: "easeOutExpo",
-    duration: 700
-  })
-  .add({ /* Wide flipped hamburger */
-    targets: '.flexbox-box',
-    translateX: function(el, i) { return -50+(i*50) },
-    scaleY: 0.9,
-    scaleX: function(el, i) { return i == 1 ? 0.7 : 0.15 },
-    easing: "easeOutExpo",
-    duration: 500,
-    delay: 800
-  })
-  .add({ /* Wide collapsed flipped hamburger */
-    targets: '.flexbox-box',
-    translateX: function(el, i) { return -50+(i*50) },
-    scaleY: 0.15,
-    scaleX: function(el, i) { return i == 1 ? 0.7 : 0.15 },
-    easing: "easeOutExpo",
-    duration: 500,
-    delay: 800
-  })
-  .add({
-    targets: '.flexbox-box',
-    translateX: function(el, i) { 
-      if (i == 0) return "-23px";
-      if (i == 1) return 0;
-      return "23px";
-    },
-    translateY: function(el, i) { return i == 1 ? "-12px" : "12px" },
-    scaleY: 0.15,
-    scaleX: function(el, i) { return i == 1 ? 0.84 : 0.38 },
-    easing: "easeOutExpo",
-    duration: 500,
-    delay: 800
-  })
-  .add({ /* hamburger */ 
-    targets: '.flexbox-box',
-    translateY: function(el, i) { 
-      if (i == 0) return 0;
-      if (i == 1) return "-23px";
-      return "23px";
-    },
-    translateX: 0,
-    scaleY: 0.15,
-    scaleX: 1,
-    easing: "easeOutExpo",
-    duration: 500,
-    delay: 800
-  });
- app.animations.track(postFlexBoxTimeline, document.querySelector(".flexbox-banner-logo"));
+  var postFlexBoxTimeline = anime.timeline({ loop: true });
+  postFlexBoxTimeline
+    .add({ /* hamburger */ 
+      targets: '.flexbox-box',
+      translateY: function(el, i) { return -23+(i*23) },
+      scaleY: 0.15,
+      duration: 500
+    })
+    .add({ /* collapsed hamburger */
+      targets: '.flexbox-box',
+      translateY: 0,
+      scaleY: 0.15,
+      duration: 900,
+      easing: "easeInOutExpo",
+      delay: 800
+    })
+    .add({ /* one vertical line */
+      targets: '.flexbox-box',
+      scaleY: 1,
+      scaleX: 0.15,
+      easing: "easeOutExpo",
+      duration: 400
+    })
+    .add({ /* flipped hamburger */
+      targets: '.flexbox-box',
+      translateX: function(el, i) { return -30+(i*30) },
+      scaleY: 0.9,
+      scaleX: 0.15,
+      easing: "easeOutExpo",
+      duration: 700
+    })
+    .add({ /* Wide flipped hamburger */
+      targets: '.flexbox-box',
+      translateX: function(el, i) { return -50+(i*50) },
+      scaleY: 0.9,
+      scaleX: function(el, i) { return i == 1 ? 0.7 : 0.15 },
+      easing: "easeOutExpo",
+      duration: 500,
+      delay: 800
+    })
+    .add({ /* Wide collapsed flipped hamburger */
+      targets: '.flexbox-box',
+      translateX: function(el, i) { return -50+(i*50) },
+      scaleY: 0.15,
+      scaleX: function(el, i) { return i == 1 ? 0.7 : 0.15 },
+      easing: "easeOutExpo",
+      duration: 500,
+      delay: 800
+    })
+    .add({
+      targets: '.flexbox-box',
+      translateX: function(el, i) { 
+        if (i == 0) return "-23px";
+        if (i == 1) return 0;
+        return "23px";
+      },
+      translateY: function(el, i) { return i == 1 ? "-12px" : "12px" },
+      scaleY: 0.15,
+      scaleX: function(el, i) { return i == 1 ? 0.84 : 0.38 },
+      easing: "easeOutExpo",
+      duration: 500,
+      delay: 800
+    })
+    .add({ /* hamburger */ 
+      targets: '.flexbox-box',
+      translateY: function(el, i) { 
+        if (i == 0) return 0;
+        if (i == 1) return "-23px";
+        return "23px";
+      },
+      translateX: 0,
+      scaleY: 0.15,
+      scaleX: 1,
+      easing: "easeOutExpo",
+      duration: 500,
+      delay: 800
+    });
+  app.animations.track(postFlexBoxTimeline, document.querySelector(".flexbox-banner-logo"));
 </script>
+
+<!-- Moving along curved path -->
+<style>
+  .mnc-demo-container {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .mnc-demo-grid {
+    overflow: hidden;
+    border: 2px solid rgba(0,0,0,0.2);
+    height: 100%;
+    width: 100%;
+  }
+
+  .mnc-demo-line {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+  }
+
+  .mnc-demo-line-vertical {
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+  }
+
+  .mnc-demo-dot {
+    will-change: transform;
+    -webkit-animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+    animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+  }
+
+  .mnc-demo-dot:after {
+    content: '';
+    display: block;
+    will-change: transform;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    -webkit-animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+  }
+
+  .mnc-demo-dot-final-x {
+    -webkit-animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+    animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+  }
+
+  .mnc-demo-dot-final-y {
+    -webkit-animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+  }
+
+  .mnc-demo-dot-final::after {
+    -webkit-animation: none;
+    animation: none;
+  }
+
+  @keyframes yAxis {
+    50% {
+      -webkit-animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+      animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+  }
+
+  @-webkit-keyframes yAxis {
+    50% {
+      -webkit-animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+      animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+  }
+
+  @keyframes xAxis {
+    50% {
+      -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+      animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+    }
+  }
+
+  @-webkit-keyframes xAxis {
+    50% {
+      -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+      animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+    }
+  }
+
+</style>
+
+<!-- Animate Box-shadow -->
+<style>
+    .box-shadow-demo {
+      display: inline-block;
+      background-color: #fff;
+      width: 90px;
+      height: 90px;
+      border-radius: 5px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      position: relative;
+      border-radius: 5px;
+      -webkit-animation: scaleAnimation 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation: scaleAnimation 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .box-shadow-demo::after {
+      content: "";
+      border-radius: 5px;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      opacity: 0;
+      -webkit-animation: fadeAnimation 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation: fadeAnimation 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    @-webkit-keyframes fadeAnimation {
+      0%, 80%, 100% {  opacity: 0; } 
+      30%, 50% {  opacity: 1; }
+    }
+
+    @-webkit-keyframes scaleAnimation {
+      0%, 80%, 100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+      } 30%, 50% {
+        -webkit-transform: scale(1.3, 1.3);
+        transform: scale(1.3, 1.3);
+      }
+    }
+
+    @keyframes fadeAnimation {
+      0%, 80%, 100% {  opacity: 0; } 
+      30%, 50% {  opacity: 1; }
+    }
+
+    @keyframes scaleAnimation {
+      0%, 80%, 100% { 
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+      } 30%, 50% {
+        -webkit-transform: scale(1.3, 1.3);
+        transform: scale(1.3, 1.3);
+      }
+    }
+
+</style>
+
+<!-- Animating link underlines -->
+<style>
+  .underlined-example-wrapper {
+    padding: 21px 20px 19px;
+    background-color: rgba(0,0,0,0.5);
+    display: inline-block;
+  }
+
+  .underlined-example {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    display:inline-block;
+  }
+
+  .underlined-example:hover {
+    color: #fff;
+  }
+
+  .underlined-example::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out 0s;
+    transform: scaleX(0);
+  }
+
+  .underlined-example:hover::before,
+  .post-preview:hover .underlined-example::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+</style>
 @endsection

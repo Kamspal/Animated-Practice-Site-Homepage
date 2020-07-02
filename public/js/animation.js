@@ -39,6 +39,19 @@ const create = (element, ...objs) => {
   return el;
 }
 
+app.ready(() => {
+  // Listen to keys, close menu if visible
+  listen(document, "keyup", e => { if (e.keyCode == app.keys.ESC) app.keys.handleESC() });
+    
+  listen(document, "keydown", e => {
+    if (e.keyCode == app.keys.arrowUp) app.keys.handleArrowUp(e);
+    else if (e.keyCode == app.keys.arrowDown) app.keys.handleArrowDown(e);
+    else if (e.keyCode == app.keys.enter) app.keys.handleEnter(e);
+  });
+
+  listen(window, "scroll", app.animations.onlyPlayVisible);
+});
+
 // Search
 app.search.visible = false;
 app.search.storageKey = "globalSearchData";
@@ -66,6 +79,14 @@ app.search.loadData = () => {
     app.search.data = data["items"];
     return;
   }
+
+  // // If not, cache this with local storage and don't fetch on every page load
+  // fetch("/js/searchable.json")
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     localStorage.setItem(app.search.storageKey, JSON.stringify(data));
+  //     app.search.data = data["items"];
+  //   }).catch( err => { /* Handle error */ });
 }
 
 app.search.updateForQuery = query => {
@@ -82,6 +103,35 @@ app.search.updateForQuery = query => {
   }
   
   app.search.renderResults(hits, query);
+}
+
+app.search.renderResults = (results, query) => {
+  const searchElements = create("div.site-search-content-results-list");
+
+  for (var i = 0; i < results.length; i++) {
+    // Create link and add "active" if first row
+    const link = create("a.site-search-results-item.js-site-search-results-item", {
+        classList: i == 0 ? "site-search-results-item-active" : "",
+        href: results[i]["url"],
+        textContent: results[i]["title"]
+      },
+      create("span.site-search-results-item-desc", results[i]["description"])
+    );
+    searchElements.appendChild(link);
+  }
+  // If length is 0, add a placeholder saying you found nothing
+  if (results.length == 0) {
+    var noResult = create("span.site-search-results-item.site-search-results-item-message",
+      'No hits for "' + query + '"'
+    );
+    searchElements.appendChild(noResult);
+  }
+  
+  var results = select(".js-site-search-content-results");
+  results.innerHTML = "";
+  results.appendChild(searchElements);
+
+  listenAll(".js-site-search-results-item", "mouseenter", e => app.search.focusItem(e.target));
 }
 
 app.menu.visible = false;

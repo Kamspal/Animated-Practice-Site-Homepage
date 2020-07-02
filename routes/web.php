@@ -43,6 +43,82 @@ Route::get('/blog/motion', function () {
     return view('/blog/motion');
 });
 
+Route::get('/blog/typography', function () {
+    return view('/blog/typography');
+});
+
+Route::get('/blog/jquery', function () {
+    return view('/blog/jquery');
+});
+
+Route::get('/blog/resources', function () {
+    return view('/blog/resources');
+});
+
+Route::get('/blog/ab-testing', function () {
+    return view('/blog/ab-testing');
+});
+
+Route::get('/blog/chaining-styles', function () {
+    return view('/blog/chaining-styles');
+});
+
+Route::get('/blog/smoother-&-sharp', function () {
+    return view('/blog/smoother-box-shadow');
+});
+
+Route::get('/blog/move-from-jquery-to-vanilla-javascript', function () {
+    return view('/blog/cheatsheet');
+});
+
+Route::get('/blog/flexbox-break-to-new-row', function () {
+    return view('/blog/flexbox');
+});
+
+Route::get('/blog/masonry-with-css', function () {
+    return view('/blog/masonry');
+});
+
+Route::get('/blog/common-flexbox-patterns', function () {
+    return view('/blog/common-flexbox');
+});
+
+Route::get('/blog/meaningful-motion-w-action-driven-animation', function () {
+    return view('/blog/motion-page');
+});
+
+Route::get('/blog/introduction-to-chartjs', function () {
+    return view('/blog/chartjs');
+});
+
+Route::get('/blog/chartjs-charts-to-get-you-started', function () {
+    return view('/blog/chartjs-start');
+});
+
+Route::get('/blog/curved-path-animations-in-css', function () {
+    return view('/blog/curved-animation');
+});
+
+Route::get('/blog/how-to-animate-box-shadow', function () {
+    return view('/blog/box-shadow-animation');
+});
+
+Route::get('/blog/google-web-font-inspiration', function () {
+    return view('/blog/google-webfont');
+});
+
+Route::get('/blog/css-trick-animating-link-underlines', function () {
+    return view('/blog/animated-underlines');
+});
+
+Route::get('/blog/common-mac-os-x-lion-cursors', function () {
+    return view('/blog/cursors');
+});
+
+Route::get('/blog/quick-guide-chaining-in-jquery', function () {
+    return view('/blog/chaining-jquery');
+});
+
 Route::get('/speaking', function () {
     return view('speaking');
 });

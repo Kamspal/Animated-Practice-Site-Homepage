@@ -39,26 +39,29 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/new.css" type="text/css">
+    <link rel="stylesheet" href="/css/responsive.css" type="text/css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="/js/animation.js"></script>
     <script src="/js/moving-letters.js"></script>
     <script src="/js/portfolio.js"></script>
     <script src="/js/spinkit.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="/js/post.js"></script>
+    
 
 
     <title>@yield('title', 'Tobias Ahlin')</title>
 
     
 </head>
-<body class="active1" id="spinkit">
+<body class="active" id="spinkit">
     <div class="site-header site-header-portfolio">
         <canvas class="site-nav-canvas"></canvas>
-        <button class="js-menu menu button-clear">
-            <span class="menu-icon-line-1 menu-icon-line"></span>
-            <span class="menu-icon-line-2 menu-icon-line"></span>
-            <span class="menu-icon-line-3 menu-icon-line"></span>
+        <button class="js-menu menu menu-spinkit button-clear">
+            <span class="menu-icon-line-1 menu-icon-line line line1"></span>
+            <span class="menu-icon-line-2 menu-icon-line line line1"></span>
+            <span class="menu-icon-line-3 menu-icon-line line line1"></span>
         </button>
         <div class="site-nav-overlay js-nav">
             <div class="nav-content">
@@ -90,128 +93,131 @@
             </div>
         </div>
 
+        <button class="site-search js-search button-clear">
+            <span class="site-search-icon search-icon1 search-icon2">
+                    <svg width="20" height="20" viewBox="0 0 38.96 41.469">
+                        <circle class="site-search-icon-circle circle1 circle2" fill="none" stroke-width="4px" cx="16.465" cy="16.484" r="14.465"></circle>
+                            <path class="site-search-icon-line line-12 line-123" d="M2791.72,95.441l3.03-3.034,13.1,13.968-3.03,3.034Z" transform="translate(-2768.88 -67.938)"></path>
+                    </svg>
+            </span>
+                <span class="site-search-close-icon">
+                    <span class="site-search-close-icon-line site-search-close-icon-line-1"></span>
+                    <span class="site-search-close-icon-line site-search-close-icon-line-2"></span>
+                </span>
+        </button>
+
         @yield('logo')
         @yield('blog-logo')
         
-        <button class="site-search js-search button-clear">
-            <span class="site-search-icon">
-                <svg width="20" height="20" viewBox="0 0 38.96 41.469">
-                    <circle class="site-search-icon-circle" fill="none" stroke-width="4px" cx="16.465" cy="16.484" r="14.465"></circle>
-                        <path class="site-search-icon-line" d="M2791.72,95.441l3.03-3.034,13.1,13.968-3.03,3.034Z" transform="translate(-2768.88 -67.938)"></path>
-                </svg>
-            <span class="site-search-close-icon" style="background-color: #1F4A54">
-                <span class="site-search-close-icon-line site-search-close-icon-line-1"></span>
-                <span class="site-search-close-icon-line site-search-close-icon-line-2"></span>
-            </span>
-        </button>
+        
         <div class="js-search-overlay site-nav-overlay-search" style="opacity: 0;">
             <div class="site-search-content">
                 <input type="text" placeholder="Search..." class="js-search-input siteSearchInput">
                     <div class="site-search-content-results js-site-search-content-results">
                         <div class="site-search-content-results-list">
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/ab-testing">
                                     A brief introduction to A/B-testing
                                 <span class="site-search-results-item-desc">
                                     Learn how to use A/B-testing as a guiding compass for making product decisions, and how to avoid its pitfalls
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/chaining-styles">
                                     Chaining styles with a JavaScript Proxy
                                 <span class="site-search-results-item-desc">
                                     If you miss method chaining from Ruby or jQuery when working with styles in JavaScript, you can recreate the pattern with a few lines of code
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/smoother-&-sharp">
                                     Smoother &amp; sharper shadows with layered box-shadows
                                 <span class="site-search-results-item-desc">
                                     With a simple CSS trick, we can get fine-tuned control over how shadows are rendered, and create richer and more realistic 3D effects
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/move-from-jquery-to-vanilla-javascript">
                                     Cheat sheet for moving from jQuery to vanilla JavaScript
                                 <span class="site-search-results-item-desc">
                                     This reference guide will help you convert jQuery's most common patterns to vanilla JavaScript
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/flexbox-break-to-new-row">
                                     Breaking to a new row with flexbox
                                 <span class="site-search-results-item-desc">
                                     You can break to a new flexbox row or column without setting the size of an item: add a collapsed flex item between two flex items
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/masonry-with-css">
                                     CSS masonry with flexbox, :nth-child(), and order
                                 <span class="site-search-results-item-desc">
                                     Creating a masonry (or mosaic) layout with flexbox produces a grid with a seemingly shuffled and obscure order, but we can achieve a natural ordering by using :nth-child() and the order property
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/common-flexbox-patterns">
                                     Common CSS Flexbox Layout Patterns with Example Code
                                 <span class="site-search-results-item-desc">
                                     Quickly create grids, masonry, stacks and more layouts with these 10 CSS flexbox templates
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/meaningful-motion-w-action-driven-animation">
                                     Meaningful Motion with Action-Driven Animation
                                 <span class="site-search-results-item-desc">
                                     Simple guiding principles for making animations more meaningful
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/introduction-to-chartjs">
                                     Data visualization with Chart.js: An introduction
                                 <span class="site-search-results-item-desc">
                                     A step-by-step guide walking you through how to build your first interactive graph with Chart.js
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/chartjs-charts-to-get-you-started">
                                     10 Chart.js example charts to get you started
                                 <span class="site-search-results-item-desc">
                                     A list of 10 graphs (bar chart, pie, line, etc.) with data set up to render  charts that you can copy and paste into your projects
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/curved-path-animations-in-css">
                                     Moving along a curved path in CSS with layered animation
                                 <span class="site-search-results-item-desc">
                                     We can apply one timing function per axis to produce curved paths, by using two or more objects to drive an animation.
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item"href="">
+                            <a class="site-search-results-item js-site-search-results-item"href="/blog/how-to-animate-box-shadow">
                                     How to animate box-shadow with silky smooth performance
                                 <span class="site-search-results-item-desc">
                                     Spoiler-alert: you don't. You use a pseudo-element.
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/google-web-font-inspiration">
                                     Google Web Font Inspiration with TypeSource
                                 <span class="site-search-results-item-desc">
                                     I built a collection of compositions to make it easier to find and match Google Web Fonts.
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/css-trick-animating-link-underlines">
                                     Animating Link Underlines
                                 <span class="site-search-results-item-desc">
                                     A quick trick: add a pseudo-element and animate it with CSS transitions on hover.
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/blog/common-mac-os-x-lion-cursors">
                                     Common Mac OS X Cursors as PNGs
                                 <span class="site-search-results-item-desc">
                                     I've prepared the most common OS X cursors in a short list, if you want to include cursors in your mockups.
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/spinkit">
                                     SpinKit
                                 <span class="site-search-results-item-desc">
                                     A collection of CSS spinners
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/moving-letters">
                                     Moving Letters
                                 <span class="site-search-results-item-desc">
                                     Text animated with JavaScript
                                 </span>
                             </a>
-                            <a class="site-search-results-item js-site-search-results-item" href="">
+                            <a class="site-search-results-item js-site-search-results-item" href="/typesource">
                                     TypeSource
                                 <span class="site-search-results-item-desc">
                                     Google Font inspiration

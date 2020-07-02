@@ -25,7 +25,7 @@
 
         <div class="section grid-items grid-items-feature-first">
                 
-                    <a class="grid-item post-preview" style="background-color: #3bab87" href="">
+                    <a href="/blog/ab-testing" class="grid-item post-preview" style="background-color: #3bab87">
                         <h1 class="grid-item-header" style="color: rgba(255,255,255,1)">A brief introduction to A/B-testing</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>
@@ -42,7 +42,7 @@
                                 </p>
                     </a>
 
-                    <a class="grid-item post-preview" style="background-color: #98bec8" href="">
+                    <a href="/blog/smoother-&-sharp" class="grid-item post-preview" style="background-color: #98bec8">
                         <h1 class="grid-item-header">Smoother & sharper shadows with layered box-shadows</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>
@@ -60,7 +60,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #2b2f3c">
+                    <a href="/blog/meaningful-motion-w-action-driven-animation" class="grid-item post-preview" style="background-color: #2b2f3c">
                         <h1 class="grid-item-header">Meaningful Motion with Action-Driven Animation</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -88,7 +88,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #45383c">
+                    <a href="/blog/curved-path-animations-in-css" class="grid-item post-preview" style="background-color: #45383c">
                         <h1 class="grid-item-header">Moving along a curved path in CSS with layered animation</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -117,7 +117,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #9ba5b5">
+                    <a href="/blog/google-web-font-inspiration" class="grid-item post-preview" style="background-color: #9ba5b5">
                         <h1 class="grid-item-header">Google Web Font Inspiration with TypeSource</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -134,7 +134,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #2b2f3c">
+                    <a href="/blog/css-trick-animating-link-underlines" class="grid-item post-preview" style="background-color: #2b2f3c">
                         <h1 class="grid-item-header">Animating Link Underlines</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -153,7 +153,7 @@
                                 </p>
                     </a>
 
-                    <a href="" class="grid-item post-preview" style="background-color: #c45850">
+                    <a href="/spinkit" class="grid-item post-preview" style="background-color: #c45850">
                         <h1 class="grid-item-header">Introducing SpinKit</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -170,7 +170,7 @@
                                 </p>
                     </a>
                     
-                    <a href="" class="grid-item post-preview" style="background-color: #45383c">
+                    <a href="/blog/common-mac-os-x-lion-cursors" class="grid-item post-preview" style="background-color: #45383c">
                         <h1 class="grid-item-header">Common Mac OS X Cursors as PNGs</h1>
                             <span class="grid-item-button">
                                 <span class="grid-item-button-label">Read more</span>   
@@ -189,80 +189,271 @@
 
         </div>
 
-        <!-- Action-Driven animation -->
+<!-- Action Driven Motion -->
+<style>
+  .post-ada-container {
+    width: 100px;
+    height: 80px;
+    position: relative;
+    display: inline-block;
+    color: #000;
+  }
+  .post-ada-window {
+      border-radius: 3px;
+      background-color: #fff;
+      text-align: center;
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-family: SF UI, SF Display, Helvetica Neue, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      transform: translateZ(0);
+      overflow: hidden;
+  }
+  .post-ada-message { padding-top: 15px; transform: translateZ(0); }
+  .post-ada-button {
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    background-color: #e5e5e5;
+    border-top: 1px solid #cecece;
+    width: 50%;
+    line-height: 20px;
+    padding-bottom: 1px;
+  }
+  .post-ada-button-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0;
+  }
+  .post-ada-button-cancel { left: 0; }
+  .post-ada-button-ok { right: 0; border-left: 1px solid #cecece; }
+  .post-ada-container .post-ada-cursor { position: absolute; bottom: -25px; right: -18px; }
+
+</style>
 <script>
-    // Post icon animation
-    var postIconTimeline = anime.timeline({ loop: true });
-    postIconTimeline
-  .add({
-    targets: '.post-ada-cursor',
-    translateX: "-75px",
-    easing: "easeOutBack",
-    duration: 400,
-    delay: 100
-  }).add({
-    // Press button
-    targets: '.post-ada-button-cancel .post-ada-button-overlay',
-    opacity: [0, 0.3],
-    easing: 'easeOutExpo',
-    duration: 100
-  }).add({
-    // Press button
-    targets: '.post-ada-button-cancel .post-ada-button-overlay',
-    opacity: [0.3, 0],
-    easing: 'easeOutExpo',
-    duration: 100
-  }).add({
-    // Shrink modal
-    targets: '.post-ada-window',
-    scale: 0.7,
-    opacity: 0,
-    easing: "easeOutExpo",
-    duration: 600
-  }).add({
-    // Reveal modal
-    targets: '.post-ada-window',
-    scale: 1,
-    opacity: 1,
-    easing: "easeOutExpo",
-    duration: 600,
-    delay: 1000
-  }).add({
-    // Move cursor
-    targets: '.post-ada-cursor',
-    translateX: "0px",
-    easing: "easeOutBack",
-    duration: 400,
-    delay: 100
-  }).add({
-    // Press button
-    targets: '.post-ada-button-ok .post-ada-button-overlay',
-    opacity: [0, 0.3],
-    easing: 'easeOutExpo',
-    duration: 100,
-    delay: 200
-  }).add({
-    // Press button
-    targets: '.post-ada-button-ok .post-ada-button-overlay',
-    opacity: [0.3, 0],
-    easing: 'easeOutExpo',
-    duration: 100
-  }).add({
-    // Expand modal
-    targets: '.post-ada-window',
-    scale: 1.3,
-    opacity: 0,
-    easing: "easeOutExpo",
-    duration: 600
-  }).add({
-    // Reveal modal
-    targets: '.post-ada-window',
-    scale: [0.6, 1],
-    opacity: 1,
-    easing: "easeOutExpo",
-    duration: 600,
-    delay: 1000
-  });
-    app.animations.track(postIconTimeline, document.querySelector(".post-ada-window"));
+  // Post icon animation
+  var postIconTimeline = anime.timeline({ loop: true });
+  postIconTimeline
+    .add({
+      targets: '.post-ada-cursor',
+      translateX: "-75px",
+      easing: "easeOutBack",
+      duration: 400,
+      delay: 100
+    }).add({
+      // Press button
+      targets: '.post-ada-button-cancel .post-ada-button-overlay',
+      opacity: [0, 0.3],
+      easing: 'easeOutExpo',
+      duration: 100
+    }).add({
+      // Press button
+      targets: '.post-ada-button-cancel .post-ada-button-overlay',
+      opacity: [0.3, 0],
+      easing: 'easeOutExpo',
+      duration: 100
+    }).add({
+      // Shrink modal
+      targets: '.post-ada-window',
+      scale: 0.7,
+      opacity: 0,
+      easing: "easeOutExpo",
+      duration: 600
+    }).add({
+      // Reveal modal
+      targets: '.post-ada-window',
+      scale: 1,
+      opacity: 1,
+      easing: "easeOutExpo",
+      duration: 600,
+      delay: 1000
+    }).add({
+      // Move cursor
+      targets: '.post-ada-cursor',
+      translateX: "0px",
+      easing: "easeOutBack",
+      duration: 400,
+      delay: 100
+    }).add({
+      // Press button
+      targets: '.post-ada-button-ok .post-ada-button-overlay',
+      opacity: [0, 0.3],
+      easing: 'easeOutExpo',
+      duration: 100,
+      delay: 200
+    }).add({
+      // Press button
+      targets: '.post-ada-button-ok .post-ada-button-overlay',
+      opacity: [0.3, 0],
+      easing: 'easeOutExpo',
+      duration: 100
+    }).add({
+      // Expand modal
+      targets: '.post-ada-window',
+      scale: 1.3,
+      opacity: 0,
+      easing: "easeOutExpo",
+      duration: 600
+    }).add({
+      // Reveal modal
+      targets: '.post-ada-window',
+      scale: [0.6, 1],
+      opacity: 1,
+      easing: "easeOutExpo",
+      duration: 600,
+      delay: 1000
+    });
+  app.animations.track(postIconTimeline, document.querySelector(".post-ada-window"));
 </script>
+
+<!-- Moving along curved path -->
+<style>
+  .mnc-demo-container {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .mnc-demo-grid {
+    overflow: hidden;
+    border: 2px solid rgba(0,0,0,0.2);
+    height: 100%;
+    width: 100%;
+  }
+
+  .mnc-demo-line {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+  }
+
+  .mnc-demo-line-vertical {
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+  }
+
+  .mnc-demo-dot {
+    will-change: transform;
+    -webkit-animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+    animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+  }
+
+  .mnc-demo-dot:after {
+    content: '';
+    display: block;
+    will-change: transform;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    -webkit-animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+  }
+
+  .mnc-demo-dot-final-x {
+    -webkit-animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+    animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+  }
+
+  .mnc-demo-dot-final-y {
+    -webkit-animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+  }
+
+  .mnc-demo-dot-final::after {
+    -webkit-animation: none;
+    animation: none;
+  }
+
+  @keyframes yAxis {
+    50% {
+      -webkit-animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+      animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+  }
+
+  @-webkit-keyframes yAxis {
+    50% {
+      -webkit-animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+      animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+  }
+
+  @keyframes xAxis {
+    50% {
+      -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+      animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+    }
+  }
+
+  @-webkit-keyframes xAxis {
+    50% {
+      -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+      animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+    }
+  }
+
+</style>
+
+<!-- Animating link underlines -->
+<style>
+  .underlined-example-wrapper {
+    padding: 21px 20px 19px;
+    background-color: rgba(0,0,0,0.5);
+    display: inline-block;
+  }
+
+  .underlined-example {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    display:inline-block;
+  }
+
+  .underlined-example:hover {
+    color: #fff;
+  }
+
+  .underlined-example::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out 0s;
+    transform: scaleX(0);
+  }
+
+  .underlined-example:hover::before,
+  .post-preview:hover .underlined-example::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+</style>
 @endsection
