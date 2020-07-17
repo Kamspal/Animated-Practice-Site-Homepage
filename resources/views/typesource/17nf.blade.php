@@ -1,5 +1,6 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'Raleway Heavy & Lora Italic - Google Web Font example "A conversation with Nils Frahm" | TypeSource')
+@section('favicon', '/img/favicon-32x32.png')
 @section('content')
 <div class="body1">
     <div class="collection-single typesource-single">

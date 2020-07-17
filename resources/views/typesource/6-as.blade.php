@@ -1,5 +1,6 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'PT Sans Bold & Lora Italic - Google Web Font example "A Search Outside of Google" | TypeSource')
+@section('favicon', '/img/favicon-32x32.png')
 @section('content')
 <div class="body1">
 

@@ -3,59 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Dosis:500&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico:400" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:900" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker:400" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Rock+Salt:400" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker:400" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400italic" rel="stylesheet" type="text/css">
+
+    <link rel="icon" href="@yield('favicon','/img/favicon.ico')" type="image/x-icon">
+    <title>@yield('title', 'Tobias Ahlin')</title>
+
     <link rel="stylesheet" href="/css/new.css" type="text/css">
-    <link rel="stylesheet" href="/css/responsive.css" type="text/css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="/js/animation.js"></script>
-    <script src="/js/moving-letters.js"></script>
     <script src="/js/portfolio.js"></script>
     <script src="/js/spinkit.js"></script>
     <script src="/js/post.js"></script>
-    
-
-
-    <title>@yield('title', 'Tobias Ahlin')</title>
 
     
 </head>
-<body class="active" id="spinkit">
+<body>
+
     <div class="site-header site-header-portfolio">
         <canvas class="site-nav-canvas"></canvas>
         <button class="js-menu menu menu-spinkit button-clear">
@@ -92,7 +56,9 @@
                 </div>
             </div>
         </div>
-
+    
+      
+        @if(Request::path() != 'spinkit')
         <button class="site-search js-search button-clear">
             <span class="site-search-icon search-icon1 search-icon2">
                     <svg width="20" height="20" viewBox="0 0 38.96 41.469">
@@ -105,6 +71,8 @@
                     <span class="site-search-close-icon-line site-search-close-icon-line-2"></span>
                 </span>
         </button>
+        @endif
+    
 
         @yield('logo')
         @yield('blog-logo')
@@ -232,7 +200,7 @@
         @yield('port')
         @yield('content')
 
-
+    @if(Request::path() != 'spinkit')
         <div class="section contact-card">
             <h2 class="section-header">Say hi.</h2>
                 <div class="contact-info">
@@ -273,6 +241,14 @@
 
                 </div>
         </div>
+    @endif
+
 
 </body>
 </html>
+
+<script>
+    $('a.site-search-results-item').hover(function(){
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+</script>

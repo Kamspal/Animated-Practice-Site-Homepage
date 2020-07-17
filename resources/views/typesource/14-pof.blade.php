@@ -1,5 +1,6 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'Merriweather Light - Google Web Font example "The Please of Finding Things Out" | TypeSource')
+@section('favicon', '/img/favicon-32x32.png')
 @section('content')
 <div class="body1">
         <div class="collection-single typesource-single">

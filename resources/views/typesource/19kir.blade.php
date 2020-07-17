@@ -1,5 +1,6 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'Permanent Marker - Google Web Font example "Keep it Real" | TypeSource')
+@section('favicon', '/img/favicon-32x32.png')
 @section('content')
 <div class="body1">
     <div class="collection-single typesource-single">

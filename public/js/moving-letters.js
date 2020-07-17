@@ -5,7 +5,7 @@ ml.isShowingSource = false;
 
 app.ready(() => {
   listenAll(".composition-wrapper", "click", e => {
-    ml.showComposition(e.currentTarget, e, {});
+    ml.showComposition(e.currentTarget, e);
   });
 
   listen(".composition-back-button", "click", e => {

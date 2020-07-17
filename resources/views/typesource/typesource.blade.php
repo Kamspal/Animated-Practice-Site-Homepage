@@ -1,8 +1,7 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'TypeSource: Google Web Font inspiration in HTML & CSS')
-<link rel="icon" sizes="32x32" href="{!! asset('img/favicon-32x32.png') !!}">
 @section('content')
-    <div class="body1">
+
         <h2 class="collection-description">
             <a href="https://www.google.com/fonts">Google Web Font</a> 
             inspiration in HTML &amp; CSS.
@@ -1459,8 +1458,4 @@
                     <!--End mc_embed_signup-->
         </div>
     </div>
-
-</div>
-
-
 @endsection

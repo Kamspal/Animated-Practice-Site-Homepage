@@ -60,7 +60,6 @@ app.ready(() => {
   if (!(searchIcon instanceof HTMLElement)) return;
 
   app.search.searchIcon = searchIcon;
-  app.search.loadData();
 
   // Dispatched events
   listen(document, "app:menuDidHide", app.search.showIcon);
@@ -68,71 +67,7 @@ app.ready(() => {
 
   // User input
   listen(searchIcon, "click", e => !app.search.visible ? app.search.reveal(e) : app.search.hide(e));
-  listen(".js-search-input", "input", e => app.search.updateForQuery(e.target.value));
 });
-
-app.search.loadData = () => {
-  // Check if data already exists, if so load it instead
-  const cachedData = localStorage.getItem(app.search.storageKey);
-  if (cachedData) {
-    const data = JSON.parse(cachedData);
-    app.search.data = data["items"];
-    return;
-  }
-
-  // // If not, cache this with local storage and don't fetch on every page load
-  // fetch("/js/searchable.json")
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     localStorage.setItem(app.search.storageKey, JSON.stringify(data));
-  //     app.search.data = data["items"];
-  //   }).catch( err => { /* Handle error */ });
-}
-
-app.search.updateForQuery = query => {
-  query = query.toLowerCase();
-  let hits = [];
-  // Look through all items
-  for (var i = 0; i < app.search.data.length; i++) {
-    // For every item, look for hits
-    const entryValues = Object.values(app.search.data[i]);
-    const searchString = entryValues.join(" ").toLowerCase();
-    if (searchString.indexOf(query) == -1) continue;
-    // Store new hit
-    hits.push(app.search.data[i]);
-  }
-  
-  app.search.renderResults(hits, query);
-}
-
-app.search.renderResults = (results, query) => {
-  const searchElements = create("div.site-search-content-results-list");
-
-  for (var i = 0; i < results.length; i++) {
-    // Create link and add "active" if first row
-    const link = create("a.site-search-results-item.js-site-search-results-item", {
-        classList: i == 0 ? "site-search-results-item-active" : "",
-        href: results[i]["url"],
-        textContent: results[i]["title"]
-      },
-      create("span.site-search-results-item-desc", results[i]["description"])
-    );
-    searchElements.appendChild(link);
-  }
-  // If length is 0, add a placeholder saying you found nothing
-  if (results.length == 0) {
-    var noResult = create("span.site-search-results-item.site-search-results-item-message",
-      'No hits for "' + query + '"'
-    );
-    searchElements.appendChild(noResult);
-  }
-  
-  var results = select(".js-site-search-content-results");
-  results.innerHTML = "";
-  results.appendChild(searchElements);
-
-  listenAll(".js-site-search-results-item", "mouseenter", e => app.search.focusItem(e.target));
-}
 
 app.menu.visible = false;
 app.ready(() => {

@@ -1,5 +1,6 @@
 @extends('layouts')
 @section('title', 'Tobias Ahlin')
+@section('favicon', '/img/favicon.ico')
 @section('content')
 @section('logo')
         <h1 class="site-name site-name-portfolio">
@@ -16,7 +17,7 @@
     <div class="portfolio-header-bg"></div>
     @show
 
-        <div class="section hero-section">
+        <div class="section hero-section responsive">
             <div class="hero-tab">
                 <h1 class="hero-name">
                     <span class="hero-tobias">

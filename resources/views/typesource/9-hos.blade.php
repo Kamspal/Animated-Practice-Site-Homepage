@@ -1,5 +1,6 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'Oswald Regular & Oswald Light - Google Web Font example "The History of Swedish Meatballs" | TypeSource')
+@section('favicon', '/img/favicon-32x32.png')
 @section('content')
 <div class="body1">
 <div class="collection-single typesource-single">

@@ -1,7 +1,28 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'Moving Letters | Text animated with JavaScript & anime.js')
+@section('favicon', '/img/favicon.ico')
 @section('content')
-    <div class="background">
+        <style>
+            html{
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            html{
+                scroll-behavior: smooth;
+                height: 100%;
+            }
+
+            .is-showing-source{
+                overflow: hidden;
+            }
+            .twitter-icon-svg{
+                height: 22px;
+                width: 30px;
+                fill: #676d77;
+            }
+        </style>
+        <div class="body12" style="background-color: #1a1a1a">
         <div class="composition-source" style="display: none">
             <a href="/moving-letters" class="composition-back-button" style="opacity: 0;display: none;transform: translateX(-40px) scale(0.8);">
                 <svg class="composition-back-image" viewBox="0 0 102.125 102.125">
@@ -1386,7 +1407,5 @@
                     <!--End mc_embed_signup-->
                 </div>
         </div>
-
-    </div>
-
+        </div>
 @endsection

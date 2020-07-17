@@ -1,6 +1,6 @@
-@extends('layouts')
-@section('title', 'Lora Italic  Montserrat Regular - Google Web Font example  |  TypeSource')
-"Your Beard Isn't Long Enough"
+@extends('typesource.layouts1')
+@section('title', "Lora Italic & Montserrat Regular - Google Web Font example \"Your Beard Isn't Long Enough\" | TypeSource")
+@section('favicon', '/img/favicon-32x32.png')
 @section('content')
 <div class="body1">
 

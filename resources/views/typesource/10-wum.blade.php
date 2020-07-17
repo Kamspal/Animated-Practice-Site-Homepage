@@ -1,5 +1,6 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'Open Sans Condensed Bold & Pacifico - Google Web Font example "Wait Until Monday" | TypeSource')
+@section('favicon', '/img/favicon-32x32.png')
 @section('content')
  <div class="body1">
 

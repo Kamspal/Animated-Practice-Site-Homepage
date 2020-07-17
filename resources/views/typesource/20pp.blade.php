@@ -1,5 +1,6 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'Droid Serif & Droid Serif Italic - Google Web Font example "Pursuit of Purpose" | TypeSource')
+@section('favicon', '/img/favicon-32x32.png')
 @section('content')
 
 <div class="body1">

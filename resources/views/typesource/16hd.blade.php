@@ -1,5 +1,6 @@
-@extends('layouts')
+@extends('typesource.layouts1')
 @section('title', 'Lato Thin & Lato Thin Italic - Google Web Font example "Happiness and design" | TypeSource')
+@section('favicon', '/img/favicon-32x32.png')
 @section('content')
 <div class="body1">
         <div class="collection-single typesource-single">
